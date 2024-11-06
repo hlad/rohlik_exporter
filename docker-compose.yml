@@ -1,0 +1,7 @@
+services:
+  rohlik:
+    build: .
+    volumes:
+      - ./config.py:/app/config.py
+    ports:
+      - "8000:8000"

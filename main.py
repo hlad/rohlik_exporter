@@ -36,4 +36,4 @@ if __name__ == '__main__':
         for p in products:
             price, name = get_product(p)
             rohlik_product_price_metric.labels(p, name).set(price)
-        time.sleep(sleep)
+        time.sleep(interval)

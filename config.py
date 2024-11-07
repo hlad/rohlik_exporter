@@ -1,4 +1,4 @@
-sleep = 600
+interval = 600
 
 user_agent = 'curl/8.10.1'
 

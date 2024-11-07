@@ -2,8 +2,13 @@ import random
 import time
 import json
 import urllib.request
-from prometheus_client import start_http_server, Gauge
+from prometheus_client import start_http_server, Gauge, REGISTRY, PROCESS_COLLECTOR, PLATFORM_COLLECTOR
 from config import *
+
+
+REGISTRY.unregister(PROCESS_COLLECTOR)
+REGISTRY.unregister(PLATFORM_COLLECTOR)
+REGISTRY.unregister(REGISTRY._names_to_collectors['python_gc_objects_collected_total'])
 
 
 rohlik_product_price_metric = Gauge('rohlik_produkt_price', 'Rohlik product price.', ["product_id", "product_name"])
